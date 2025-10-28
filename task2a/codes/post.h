@@ -5,7 +5,7 @@
 typedef struct Post {
     char* username;
     char* caption;
-    Comment* comments;
+    comment* comments;
     struct Post* next;
     struct Post* prev;
 } Post;

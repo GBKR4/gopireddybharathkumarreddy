@@ -21,7 +21,7 @@ Post* nextPost();
 Post* previousPost();
 bool addComment(char* username, char* content);
 bool deleteComment(int n);
-Comment* viewComments();
+comment* viewComments();
 bool addReply(char* username, char* content, int n);
 bool deleteReply(int n, int m);
 void freePlatform(Platform* platform);

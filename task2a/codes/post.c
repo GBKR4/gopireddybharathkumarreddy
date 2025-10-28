@@ -30,9 +30,9 @@ Post* createPost(char* username, char* caption) {
 //removes allocated space
 void freePost(Post* post) {
     if (post == NULL) return;   
-    Comment* current = post->comments;
+    comment* current = post->comments;
     while (current != NULL) {  
-        Comment* temp = current;
+        comment* temp = current;
         current = current->next;
         freeComment(temp);
     }

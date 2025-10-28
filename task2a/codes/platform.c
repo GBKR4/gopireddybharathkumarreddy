@@ -118,13 +118,13 @@ bool addComment(char* username, char* content) {
         return false;
     }
 
-    Comment* newComment = createComment(username, content);
+    comment* newComment = createcomment(username, content);
     if (newComment == NULL) return false;
 
     if (plat_form->lastViewedPost->comments == NULL) {
         plat_form->lastViewedPost->comments = newComment;
     } else {
-        Comment* tail = plat_form->lastViewedPost->comments;
+        comment* tail = plat_form->lastViewedPost->comments;
         while (tail->next != NULL) {
             tail = tail->next;
         }
@@ -142,7 +142,7 @@ bool deleteComment(int n) {
     }
 
     int total = 0;
-    Comment* temp = plat_form->lastViewedPost->comments;
+    comment* temp = plat_form->lastViewedPost->comments;
     while (temp != NULL) {
         total++;
         temp = temp->next;
@@ -153,7 +153,7 @@ bool deleteComment(int n) {
         return false;
     }
 
-    Comment* current = plat_form->lastViewedPost->comments;
+    comment* current = plat_form->lastViewedPost->comments;
     for (int i = 1; i < targetPos && current != NULL; i++) {
         current = current->next;
     }
@@ -176,7 +176,7 @@ bool deleteComment(int n) {
     return true;
 }
 
-Comment* viewComments() {
+comment* viewComments() {
     if (plat_form == NULL || plat_form->lastViewedPost == NULL) {
         return NULL;
     }
@@ -191,7 +191,7 @@ bool addReply(char* username, char* content, int n) {
     }
 
     int total = 0;
-    Comment* temp = plat_form->lastViewedPost->comments;
+    comment* temp = plat_form->lastViewedPost->comments;
     while (temp != NULL) {
         total++;
         temp = temp->next;
@@ -202,7 +202,7 @@ bool addReply(char* username, char* content, int n) {
         return false;
     }
 
-    Comment* current = plat_form->lastViewedPost->comments;
+    comment* current = plat_form->lastViewedPost->comments;
     for (int i = 1; i < targetPos && current != NULL; i++) {
         current = current->next;
     }
@@ -238,7 +238,7 @@ bool deleteReply(int n, int m) {
     }
 
     int totalComments = 0;
-    Comment* tempComment = plat_form->lastViewedPost->comments;
+    comment* tempComment = plat_form->lastViewedPost->comments;
     while (tempComment != NULL) {
         totalComments++;
         tempComment = tempComment->next;
@@ -249,7 +249,7 @@ bool deleteReply(int n, int m) {
         return false;
     }
 
-    Comment* comment = plat_form->lastViewedPost->comments;
+    comment* comment = plat_form->lastViewedPost->comments;
     for (int i = 1; i < targetCommentPos && comment != NULL; i++) {
         comment = comment->next;
     }

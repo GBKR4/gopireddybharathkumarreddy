@@ -15,11 +15,11 @@ void printPost(Post* post) {
 }
 
 //prints all comments
-void print_all_Comments(Comment* commentHead) {
+void print_all_Comments(comment* commentHead) {
     if (commentHead == NULL) {
         return;
     }
-    Comment* current = commentHead;
+    comment* current = commentHead;
     while (current != NULL) {
         printf("%s %s\n", current->username, current->content);
         Reply* replyPtr = current->replies; 
@@ -112,15 +112,15 @@ int main() {
             }
         }
         else if (strcmp(command, "view_comments") == 0) {
-            Comment* comments = viewComments();
+            comment* comments = viewComments();
             if (comments != NULL) {
-                printAllComments(comments);
+                print_all_Comments(comments);
             }
         }
         else if (strcmp(command, "view_all_comments") == 0) {
-            Comment* comments = viewComments();
+            comment* comments = viewComments();
             if (comments != NULL) {
-                printAllComments(comments);
+                print_all_Comments(comments);
             }
         }
         else if (strcmp(command, "add_reply") == 0) {

@@ -4,8 +4,8 @@
 #include "comment.h"
 #include "reply.h"
 
-Comment* createComment(char* username, char* content) {
-    Comment* newComment = (Comment*)malloc(sizeof(Comment));//allocate space
+comment* createcomment(char* username, char* content) {
+    comment* newComment = (comment*)malloc(sizeof(comment));//allocate space
     if (!newComment) return NULL;  
     newComment->username = (char*)malloc(strlen(username) + 1);
     if (newComment->username == NULL) { 
@@ -28,7 +28,7 @@ Comment* createComment(char* username, char* content) {
 }
 
 //removes allocated space
-void freeComment(Comment* comment) {
+void freeComment(comment* comment) {
     if (comment == NULL) return;  
 
     Reply* current = comment->replies;
